@@ -1,0 +1,341 @@
+/* main, starting */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles*/
+header h1 a{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+    color: #fff6e1;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+header h1 :hover{
+    text-decoration: underline;
+}
+
+header h2{
+    font-size: 1.3rem;
+    color: #d2bf94;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+
+h2{
+    font-size: 1.6rem;
+    color: #fff6e1;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+
+/* body style which makes sure that it passes color contrast*/
+body {
+    background-color: #29231d;
+    font-family:'Segoe UI', Verdana, sans-serif;
+    line-height: 1.5;
+    font-weight: 100;
+    color: #ffffff;
+    padding: 10px;
+    margin: 0;
+}
+
+main, footer {
+  padding: 10px;
+  margin: 0;
+}
+
+.summary{
+    margin-bottom: 20px;
+    background-color: #392f27;
+    border-radius: 2%;
+}
+
+p{
+    padding: 10px 10px 10px 10px;
+}
+
+
+
+/* Navbar */
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+nav ul li {
+  margin-bottom: 8px;
+  margin-left: 5px;
+  animation: pulse 1s linear infinite both;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #d2bf94;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+
+/* Athlete */
+
+#individual-results.athlete img{
+    margin:0 auto;
+    align-items: center;
+}
+
+figure{
+    /* display: block; */
+    align-items: center;
+    padding: 10px 0px 0px 0px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    unicode-bidi: isolate;
+    text-align: center;
+}
+
+figcaption{
+    color: #d2bf94;
+    font-weight: 500;
+}
+
+.athlete{
+    background-color: #392f27;
+    border-radius: 2%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.athlete dt{
+    text-align: center;
+    font-weight: 500;
+    padding: 5px 0px 5px 0px;
+}
+
+.athlete dl{
+    text-align: center;
+    font-weight: 400;
+    padding:0px 0px 10px 0px;
+}
+
+.athlete dd{
+    text-align: center;
+    font-weight: 200;
+}
+
+.athlete img{
+    object-fit: cover;
+    border-radius: 2%;
+    width:300px;
+    height:300px;
+    border:3px solid #fff;
+    border-radius: 2%;
+    box-shadow: 0 4px 8px rgba(30, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Image will enlarge when hover */
+.athlete img:hover, #gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(30, 0, 0, 0.7);
+}
+
+/* Image enlarge on focus for accessibility */
+.athlete img:focus, #gallery img:focus {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(30, 0, 0, 0.7);
+  outline: none;
+}
+
+/* Keep image enlarged when clicking */
+.athlete img:active, #gallery img:active {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(30, 0, 0, 0.7);
+}
+
+
+
+/* table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+}
+
+th{
+  padding: 10px;
+  text-align: center;
+  background-color: #52463a;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+/* lines with even number will have a different color to help user better view the content */
+tr:nth-child(even) {
+  background-color: #3d342b;
+}
+
+
+
+/* Gallery style is basically the same as styles for athelete images*/
+#gallery{
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+#gallery img{
+    object-fit: cover;
+    width:300px;
+    height:400px;
+    box-shadow: 0 4px 8px rgba(30, 0, 0, 0.5);
+    margin:0px 25px 25px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+a[href = "#main"]{
+    color:white;
+}
+
+a[href = "#a"]{
+    color:white;
+}
+
+
+/* Dark Mode and High Contrast Modes */
+/* Changed all background color to have a higher contrast with the text */
+@media (prefers-color-scheme: dark) {
+  body{
+    background-color: black;
+  }
+  .summary, .athlete, tr:nth-child(even){
+    background-color: #101010;
+}
+th {
+    background-color: #282828;
+}
+} 
+
+
+/* Accessibility and Animation */
+/* For users who refer reduced motion or no animation */
+@media (prefers-reduced-motion: reduce) {
+  .athlete img, #gallery img{
+    transition: none;
+  }
+}
+
+
+@media (min-width: 768px) {
+  body{
+    padding:2.5%;
+  }
+
+  figure polaroid{
+    align-items: center;
+    padding: 10px 0px 0px 280px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    unicode-bidi: isolate;
+    text-align: center;
+  }
+  
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+#individual-results .athlete{
+  display: inline-grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 5px 5px 5px 5px;
+}
+
+figure {
+    margin: 1em 20px;
+}
+}
+
+
+/* styles for the footer */
+footer {
+    background-color: #231e15;
+    padding: 20px;
+    font-family:'Segoe UI', sans-serif;
+    font-size: 0.9em;
+    color: #ffffff;
+    text-align: center;
+  }
+
+footer a{
+    color: #ffffff;
+}
+
+td a{
+  color: #ffffff;
+}
+
+
+/* style for the slideshow, making sure it is at the middle of the page and the button is not blocking the image */
+#slideshow-gallery {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slideshow-wrapper {
+  margin:5% 0 0 19.5%;
+}
+
+.slide-image {
+  width: 100%;
+  display: block;
+}
+
+.next-button, .prev-button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1em;
+  z-index: 1;
+}
+
+.next-button {
+  right: 30px;
+}
+
+.prev-button {
+  left: - 20px;
+}
